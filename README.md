@@ -34,6 +34,23 @@ PHP files in this project require a web server. In order to simulate a working 0
 
 <br>
 
+If you would rather set the schema yourself, instead of importing the file, go to the "SQL" tab in the top bar and run this query:
+
+```sql
+CREATE TABLE `users` (
+    `id` INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    `name` VARCHAR(255) NOT NULL,
+    `email` VARCHAR(255) NOT NULL UNIQUE,
+    `password` VARCHAR(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+```
+
+<br>
+
+When importing the sql file, it will perform this query automatically, so it is recomended to just import it for simplicity. 
+
+<br>
+
 ### 4. Accessing The Project
 
 Now you are ready to work on the project locally. Go to http://localhost/capstone to view the home page for the project. If setup correctly, you should be able to sign up and sign in. 
