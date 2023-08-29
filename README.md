@@ -29,7 +29,7 @@ PHP files in this project require a web server. In order to simulate a working 0
 ### 3. Setup the Database
 
 - Access phpMyAdmin by going to a web browser and type in: http://localhost/phpmyadmin/
-- Click "New" on the left hand side to create a new database and call it "capstone". Then click the "Import" button in the middle of the top bar.
+- Click "New" on the left hand side to create a new database and call it `id21196724_capstone`. Then click the "Import" button in the middle of the top bar.
 - Select the sql file inside the db/ directory from the repo and keep all the options set as-is. If successful you should see no errors and a 'users' table inside the capstone database (on the left).
 
 <br>
