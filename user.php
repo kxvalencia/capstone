@@ -8,10 +8,14 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 }
 ?>
 
-<!-- MAIN HTML CONTENT GOES HERE
-============================================================= -->
 <!DOCTYPE html>
+
 <html>
+    <link rel="stylesheet" href="dashstyle.css">
+    <div class="header">
+        <h1><a href="https://www.tacobell.com/">Notice</a> <a href="https://www.tacobell.com">Tasks</a></h1>
+    </div>
+
 <head>
     <title>User Dashboard</title>
 </head>
