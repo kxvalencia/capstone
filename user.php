@@ -9,13 +9,40 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+
 <html>
-    <link rel="stylesheet" href="dashstyle.css">
-    <div class="header">
+    
+    <link rel="stylesheet" href="tess.css">
+    
+    <body>
+    
+    <div class="header" id="head">
         <h1><a href="https://www.tacobell.com/">Notice</a> <a href="https://www.tacobell.com">Tasks</a></h1>
     </div>
 
+    <script>
+        window.onscroll = function() {scrollf()};
+                
+        var header = document.getElementById("head");
+                
+        var sticky = header.offsetTop;
+                
+        function scrollf() {
+          if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+          } else {
+            header.classList.remove("sticky");
+          }
+        }
+    </script>
+    
+    </body>
+
+</html>
+
+<!DOCTYPE html>
+
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
