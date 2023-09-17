@@ -12,7 +12,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 
 <html>
     
-    <link rel="stylesheet" href="tess.css">
+    <link rel="stylesheet" href="dashstyle.css">
     
     <body>
     
