@@ -9,7 +9,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 ?>
 
 <!DOCTYPE html>
-
+<html lang="en">
 <html>
     <link rel="stylesheet" href="dashstyle.css">
     <div class="header">
@@ -17,7 +17,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     </div>
 
 <head>
-    <title>User Dashboard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Dashboard</title>
 </head>
 <body>
 
