@@ -1,0 +1,10 @@
+Ivan & Connor:
+    - During Weeks 3 and 4, we will improve the existing pages and proceed to develop the rest of the front-end portion of the web application 
+
+Kyle & Dariel:
+    - We'll keep collaborating closely with the front-end team on any code modifications and will be pitching in suggestions from our back-end perspective.
+
+Sean:
+    - I’ll make sure to keep our project on track and running according to schedule. 
+    - I’ll regularly update our GANTT chart to reflect any changes and keep everything current. 
+    - I’ll also go over the project plan and our milestones with everyone to make sure we’re all on the same page and everything’s clear.

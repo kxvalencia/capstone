@@ -1,0 +1,14 @@
+Ivan & Connor:
+    - Start the HTML front-end web pages.
+    - Begin generating the stylesheets for the HTML web pages.
+    - Work with the back-end team to ensure smooth database integration.
+
+Kyle & Dariel:
+    - Create the Database for 000WebHost.
+    - Create a users table for signing up and logging in.
+    - Test the database using the HTML web pages from the front-end.
+
+Sean:
+    - Begin the Gantt chart using Microsoft Excel.
+    - Distribute current tasks and deadlines to project members.
+    - Ensure a timely execution of each task.
