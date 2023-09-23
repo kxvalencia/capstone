@@ -1,5 +1,7 @@
 # Captstone Project
 
+Website domain: https://capstone-main.000webhostapp.com/
+
 I made this guide on Windows, so it contains Windows-specific steps. If you are on MacOS or Linux, let me know in the discord and I will update this to help you with the setup process. Please read the guide all the way to the end. There is important information about the database at the bottom. 
 
 <br>
