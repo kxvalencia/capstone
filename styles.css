@@ -14,3 +14,141 @@ label, input {
     width: 100%;
     margin-bottom: 10px;
 }
+
+.header {
+    background-color: #0D47A1;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-weight: 500;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 30px 0;
+}
+
+.nav a {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.nav a:hover {
+    opacity: 0.8;
+}
+
+.container {
+    padding: 20px 20px 0 20px;
+    position: relative;
+}
+
+.create-button {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    background-color: #0D47A1;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.create-button:hover {
+    background-color: #1A74C1;
+}
+
+#searchBox {
+    padding: 10px;
+    width: calc(100% - 20px);
+    border-radius: 3px;
+    border: 1px solid #0D47A1;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.patient-list {
+    list-style-type: none;
+    padding: 0 20px;
+}
+
+.patient-name {
+    display: block;
+    padding: 12px 15px;
+    background-color: #BBDEFB;
+    border: 1px solid #90CAF9;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+.patient-name:hover {
+    background-color: #E3F2FD;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: #F5F5F5;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #B0BEC5;
+    width: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #B0BEC5;
+}
+
+textarea {
+    resize: vertical;
+}
