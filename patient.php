@@ -29,7 +29,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valencia Medical</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
@@ -37,18 +37,20 @@ try {
     <div class="header">
         <h1>Valencia Medical</h1>
         <div class="nav">
-            <a href="#">Patients</a>
-            <a href="#">Prescriptions</a>
-            <a href="#">Appointments</a>
-            <a href="#">Reports & Analytics</a>
+            <a href="patient.php">Patients</a> <!-- Example Redirect -->
+            <a href="prescriptions_page.php">Prescriptions</a> <!-- Example Redirect -->
+            <a href="appointments_page.php">Appointments</a> <!-- Example Redirect -->
+            <a href="reports_analytics_page.php">Reports & Analytics</a> <!-- Example Redirect -->
         </div>
     </div>
 
     <div class="container">
-        <button class="create-button" onclick="openModal('create')">Create a Patient</button>
+        <button class="create-button" onclick="window.location.href='create_patient_page.html'">Create a Patient</button>
         <div class="top-section">
-            <input type="text" id="searchBox" placeholder="Search for a patient...">
-            <button onclick="searchUsers()">Search</button>
+            <div class="search-container">
+                <input type="text" id="searchBox" placeholder="Search for a patient...">
+                <button onclick="searchUsers()">Search</button>
+            </div>
         </div>
 
         <ul class="patient-list">
@@ -60,14 +62,13 @@ try {
         </ul>
     </div>
 
-
     <script>
         function searchUsers() {
             const query = document.getElementById('searchBox').value;
 
             fetch('search.php', {
                 method: 'POST',
-                body: new URLSearchParams(`query=%${query}%`), // Use % for wildcard search
+                body: new URLSearchParams(`query=%${query}%`),
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 }
@@ -75,7 +76,7 @@ try {
                 .then(response => response.json())
                 .then(users => {
                     const patientList = document.querySelector('.patient-list');
-                    patientList.innerHTML = ''; // Clear existing list
+                    patientList.innerHTML = '';
 
                     users.forEach(user => {
                         const listItem = document.createElement('li');
