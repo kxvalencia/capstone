@@ -1,5 +1,9 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #E3F2FD;
+    color: #333;
 }
 
 form {
