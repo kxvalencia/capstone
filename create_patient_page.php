@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Create a Patient</title>
-    <link rel="stylesheet" type="text/css" href="styles2.css">
+    <link rel="stylesheet" type="text/css" href="create_patient.css">
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@800;900&display=swap" rel="stylesheet">
 </head>
 
