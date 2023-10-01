@@ -45,7 +45,7 @@ try {
     </div>
 
     <div class="container">
-        <button class="create-button" onclick="window.location.href='create_patient_page.html'">Create a Patient</button>
+        <button class="create-button" onclick="window.location.href='create_patient_page.php'">Create a Patient</button>
         <div class="top-section">
             <div class="search-container">
                 <input type="text" id="searchBox" placeholder="Search for a patient...">
