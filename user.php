@@ -17,7 +17,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <body>
     
     <div class="header" id="head">
-        <h1><a href="https://www.tacobell.com/">Notice</a> <a href="https://www.tacobell.com">Tasks</a></h1>
+        <h1><a href="https://www.tacobell.com/">Notice</a> <a href="create_patient_page.php">Create Page</a></h1>
     </div>
 
     <script>
