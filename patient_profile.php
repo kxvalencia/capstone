@@ -11,7 +11,7 @@
     <div class="header">
         <h1>Patient Management System</h1>
         <div class="nav">
-            <a href="patient_list.php">Patients</a>
+            <a href="patient.php">Patients</a>
             <a href="prescriptions.php">Prescriptions</a>
             <a href="appointments.php">Appointments</a>
             <a href="reports.php">Reports & Analytics</a>
