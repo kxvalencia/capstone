@@ -1,0 +1,75 @@
+body {
+            font-family: 'Public Sans', sans-serif;
+            background-color: #E3F2FD;
+            margin: 0;
+            padding: 0;
+}
+.header {
+            background-color: #0D47A1;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            font-weight: 500;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-radius: 15px;
+}
+
+.nav {
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+}
+
+.nav a {
+            margin: 0 10px;
+            color: #fff;
+            text-decoration: none;
+            transition: opacity 0.3s;
+}
+
+.nav a:hover {
+            opacity: 0.8;
+}
+
+.profile-box {
+            background-color: #FFF;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-section {
+            margin-bottom: 20px;
+}
+
+button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+}
+
+.action-buttons button {
+            margin-right: 10px;
+}
+
+.btn-edit {
+            background-color: #4CAF50;
+}
+
+.btn-delete {
+            background-color: #4CAF50;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .return-link {
+            display: block;
+            margin-top: 20px;
+        }
