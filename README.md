@@ -37,8 +37,9 @@ PHP files in this project require a web server. In order to simulate a working 0
 
 <br>
 
-If you would rather set the schema yourself, instead of importing the file, go to the "SQL" tab in the top bar and run this query:
+## SQL TABLE QUERIES
 
+`user` table:
 ```sql
 CREATE TABLE `users` (
     `id` INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -48,9 +49,20 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 ```
 
-<br>
+`patients` table:
 
-When importing the sql file, it will perform this query automatically, so it is recomended to just import it for simplicity. 
+```sql
+CREATE TABLE `patients` (
+    `patient_id` INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    `name` VARCHAR(255) NOT NULL,
+    `sex` ENUM('Male', 'Female', 'Other', 'Prefer Not to Say') NOT NULL,
+    `height_feet` TINYINT UNSIGNED,
+    `height_inches` TINYINT UNSIGNED,
+    `weight_pounds` DECIMAL(5,2),
+    `blood_type` ENUM('A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'),
+    `medical_history` TEXT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+```
 
 <br>
 
