@@ -51,7 +51,7 @@
             <button class="btn-delete">Delete</button>
         </div>
 
-        <button class="create-button" onclick="window.location.href='Patient List page.html'">Back</button>
+        <button class="create-button" onclick="window.location.href='patient.php'">Back</button>
 
         <div class="profile-section">
             <h2>Emergency Contacts</h2>
