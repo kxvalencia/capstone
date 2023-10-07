@@ -1,0 +1,12 @@
+Ivan, Connor, George, Paul:
+    - Conclude the foundational front-end development.
+    - Determine any future changes or additions to front-end.
+
+Dariel, Kyle:
+    - Debugging phase.
+    - Testing existing database interactivity.
+    - Ensuring everything works as intended.
+
+Sean:
+    - Regularly update the GANTT chart to track progress.
+    - Align with the team for effective management of the project.
