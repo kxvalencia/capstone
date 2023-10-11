@@ -41,7 +41,7 @@ try {
             $_SESSION['loggedin'] = true;
             $_SESSION['name'] = $user['name'];
             $_SESSION['email'] = $user['email'];
-            header("Location: user.php");
+            header("Location: dashboard.php");
             exit;
         } else {
             echo "Invalid login credentials.";
