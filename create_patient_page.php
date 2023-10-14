@@ -14,10 +14,10 @@
     <div class="header">
         <h1>Patient Management System</h1>
         <div class="nav">
-            <a href="Patient List page.html">Patients</a>
-            <a href="prescriptions.html">Prescriptions</a>
-            <a href="appointments.html">Appointments</a>
-            <a href="reports.html">Reports & Analytics</a>
+            <a href="patient.php">Patients</a>
+            <a href="prescriptions.php">Prescriptions</a>
+            <a href="appointments.php">Appointments</a>
+            <a href="reports.php">Reports & Analytics</a>
         </div>
     </div>
     
@@ -51,6 +51,10 @@
                     <option value="AB">AB</option>
                     <option value="O">O</option>
                 </select>
+            </div>
+            <div class="input-group">
+                <label for="insurance">Insurance Provider:</label>
+                <input type="number" id="insurance" name="insurance" required>
             </div>
             <div class="input-group">
                 <label for="medicalHistory">Previous Medical History:</label>
