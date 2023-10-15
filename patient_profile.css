@@ -139,6 +139,28 @@ button:hover {
     display: block;
 }
 
+.btn-add-prescriptions {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.btn-add-appointments {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    display: block;
+}
+
 .medical-records {
     border: 1px solid #ddd;
     padding: 10px;
@@ -154,4 +176,3 @@ button:hover {
 .medical-record-details h4 {
     margin-top: 0;
 }
-
