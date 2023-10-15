@@ -22,7 +22,7 @@
 
     <div class="profile-box">
         <div class="profile-section">
-            <h2>Personal Details</h2>
+            <h2>Patient Details</h2>
             <p><strong>Name:</strong></p>
             <p><strong>Sex:</strong></p>
             <p><strong>Height:</strong> <input type="number" placeholder="Feet"> <input type="number" placeholder="Inches"></p>
@@ -35,6 +35,8 @@
             <a class="tab-link active" onclick="showTab('medical-history')">Medical History</a>
             <a class="tab-link" onclick="showTab('medications')">Medications</a>
             <a class="tab-link" onclick="showTab('allergies')">Allergies</a>
+            <a class="tab-link" onclick="showTab('prescriptions')">Prescriptions</a>
+            <a class="tab-link" onclick="showTab('appointments')">Appointments</a>
         </div>
 
         <div class="profile-section tab-content active" id="medical-history">
@@ -56,8 +58,24 @@
         <div class="profile-section tab-content" id="allergies">
             <h3>Allergies</h3>
             <button class="btn-update-allergies" onclick="updateNewAllergy()">Update Allergies</button>
-            <div class="updateALlergies">
+            <div class="updateAllergies">
+                 <!-- List of allergies will be displayed here -->
+            </div>
+        </div>
 
+        <div class="profile-section tab-content" id="prescriptions">
+            <h3>Allergies</h3>
+            <button class="btn-add-prescriptions" onclick="addNewPrescription()">Add a New Prescription</button>
+            <div class="new-Prescription">
+                 <!-- List of prescriptions will be displayed here -->
+            </div>
+        </div>
+
+        <div class="profile-section tab-content" id="appointments">
+            <h3>Allergies</h3>
+            <button class="btn-add-appointments" onclick="addNewAppointment()">New Appointment</button>
+            <div class="new-Appointment">
+                 <!-- List of appointments will be displayed here -->
             </div>
         </div>
 
