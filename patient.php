@@ -1,20 +1,16 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "id21196724_capstone";
-$users = []; // An empty array to store the user names
+include 'db.php';
+
+$patients = []; // An empty array to store the patient names
 
 try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    $stmt = $conn->prepare("SELECT name FROM users"); // Query to select names
+    // Using $pdo instead of $conn, if that's the name in your db.php
+    $stmt = $pdo->prepare("SELECT name FROM patients"); // Query to select patient names
     $stmt->execute();
 
-    // Fetch all user names and store them in the $users array
-    $users = $stmt->fetchAll(PDO::FETCH_COLUMN, 0);
+    // Fetch all patient names and store them in the $patients array
+    $patients = $stmt->fetchAll(PDO::FETCH_COLUMN, 0);
 
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
@@ -46,7 +42,7 @@ try {
 
     <div class="container">
         <button class="create-button" onclick="window.location.href='create_patient_page.php'">Create a Patient</button>
-        
+
         <div class="top-section">
             <div class="search-container">
                 <input type="text" id="searchBox" placeholder="Search for a patient...">
@@ -55,9 +51,9 @@ try {
         </div>
 
         <ul class="patient-list">
-            <?php foreach ($users as $user): ?>
+            <?php foreach ($patients as $patient): ?>
                 <li><a class="patient-name" href="#">
-                        <?php echo htmlspecialchars($user); ?>
+                        <?php echo htmlspecialchars($patient); ?>
                     </a></li>
             <?php endforeach; ?>
         </ul>
@@ -73,26 +69,25 @@ try {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 }
             })
-            .then(response => response.json())
-            .then(users => {
-                const patientList = document.querySelector('.patient-list');
-                patientList.innerHTML = '';
-                users.forEach(user => {
-                    const listItem = document.createElement('li');
-                    const link = document.createElement('a');
-                    link.classList.add('patient-name');
-                    link.href = "#";
-                    link.textContent = user.name;
-                    listItem.appendChild(link);
-                    patientList.appendChild(listItem);
+                .then(response => response.json())
+                .then(users => {
+                    const patientList = document.querySelector('.patient-list');
+                    patientList.innerHTML = '';
+                    users.forEach(user => {
+                        const listItem = document.createElement('li');
+                        const link = document.createElement('a');
+                        link.classList.add('patient-name');
+                        link.href = "#";
+                        link.textContent = user.name;
+                        listItem.appendChild(link);
+                        patientList.appendChild(listItem);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching search results:', error);
                 });
-            })
-            .catch(error => {
-                console.error('Error fetching search results:', error);
-            });
         }
     </script>
 </body>
 
 </html>
-

@@ -1,4 +1,30 @@
-*/ Insert your PHP code above /*
+<?php
+include 'db.php';
+
+$message = '';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $sex = $_POST['sex'];
+    $height_feet = $_POST['height_ft'];
+    $height_inches = $_POST['height_in'];
+    $weight_pounds = $_POST['weight'];
+    $blood_type = $_POST['bloodType'];
+    $medical_history = $_POST['medicalHistory'];
+
+    $stmt = $pdo->prepare("INSERT INTO patients (name, sex, height_feet, height_inches, weight_pounds, blood_type, medical_history) VALUES (?, ?, ?, ?, ?, ?, ?)");
+
+    if ($stmt->execute([$name, $sex, $height_feet, $height_inches, $weight_pounds, $blood_type, $medical_history])) {
+        $message = 'Patient successfully added!';
+    } else {
+        $message = 'There was an error adding the patient. Please try again.';
+    }
+}
+
+
+$stmt = $pdo->prepare("INSERT INTO patients (name, sex, height_feet, height_inches, weight_pounds, blood_type, medical_history) VALUES (?, ?, ?, ?, ?, ?, ?)");
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,9 +46,15 @@
             <a href="reports.php">Reports & Analytics</a>
         </div>
     </div>
-    
+
     <div class="container">
-        <form action="/submit" method="POST" id="createPatientForm">
+        <?php if (!empty($message)): ?>
+            <div class="alert">
+                <?= $message ?>
+            </div>
+        <?php endif; ?>
+
+        <form action="" method="POST" id="createPatientForm">
             <div class="input-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
@@ -36,8 +68,12 @@
                 </select>
             </div>
             <div class="input-group">
-                <label for="height">Height (in):</label>
-                <input type="number" id="height" name="height" required>
+                <label for="height_ft">Height (ft):</label>
+                <input type="number" id="height_ft" name="height_ft" required>
+            </div>
+            <div class="input-group">
+                <label for="height_in">Height (in):</label>
+                <input type="number" id="height_in" name="height_in" required>
             </div>
             <div class="input-group">
                 <label for="weight">Weight (lbs):</label>
@@ -46,15 +82,15 @@
             <div class="input-group">
                 <label for="bloodType">Blood Type:</label>
                 <select id="bloodType" name="bloodType" required>
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="AB">AB</option>
-                    <option value="O">O</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
                 </select>
-            </div>
-            <div class="input-group">
-                <label for="insurance">Insurance Provider:</label>
-                <input type="number" id="insurance" name="insurance" required>
             </div>
             <div class="input-group">
                 <label for="medicalHistory">Previous Medical History:</label>
