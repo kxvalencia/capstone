@@ -10,11 +10,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $height_inches = $_POST['height_in'];
     $weight_pounds = $_POST['weight'];
     $blood_type = $_POST['bloodType'];
+    $insurance = $_POST['insurance'];
     $medical_history = $_POST['medicalHistory'];
 
-    $stmt = $pdo->prepare("INSERT INTO patients (name, sex, height_feet, height_inches, weight_pounds, blood_type, medical_history) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $pdo->prepare("INSERT INTO patients (name, sex, height_feet, height_inches, weight_pounds, blood_type, medical_history, insurance) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 
-    if ($stmt->execute([$name, $sex, $height_feet, $height_inches, $weight_pounds, $blood_type, $medical_history])) {
+
+    if ($stmt->execute([$name, $sex, $height_feet, $height_inches, $weight_pounds, $blood_type, $medical_history, $insurance])) {
         $message = 'Patient successfully added!';
     } else {
         $message = 'There was an error adding the patient. Please try again.';
@@ -91,6 +93,10 @@ $stmt = $pdo->prepare("INSERT INTO patients (name, sex, height_feet, height_inch
                     <option value="O+">O+</option>
                     <option value="O-">O-</option>
                 </select>
+            </div>
+            <div class="input-group">
+                <label for="insurance">Insurance Provider:</label>
+                <input type="text" id="insurance" name="insurance" required>
             </div>
             <div class="input-group">
                 <label for="medicalHistory">Previous Medical History:</label>
