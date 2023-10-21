@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 04, 2023 at 08:26 PM
+-- Generation Time: Oct 22, 2023 at 01:48 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -35,7 +35,8 @@ CREATE TABLE `patients` (
   `height_inches` tinyint(3) UNSIGNED DEFAULT NULL,
   `weight_pounds` decimal(5,2) DEFAULT NULL,
   `blood_type` enum('A+','A-','B+','B-','AB+','AB-','O+','O-') DEFAULT NULL,
-  `medical_history` text DEFAULT NULL
+  `medical_history` text DEFAULT NULL,
+  `insurance` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
