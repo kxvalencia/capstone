@@ -1,94 +1,85 @@
 body {
     font-family: 'Public Sans', sans-serif;
-    background-color: #E3F2FD;
+    background-color: #f4f5f7;
     margin: 0;
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header Styles */
 .header {
-    background-color: #0D47A1;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-    font-weight: 500;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-radius: 15px;
+    background-color: #4a66f7;
+    color: white;
+    padding: 20px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header h1 {
+    margin: 0;
+    font-weight: 900;
+    font-size: 1.5rem;
 }
 
 .nav {
     display: flex;
-    justify-content: center;
-    margin: 10px 0 30px 0;
+    gap: 20px;
 }
 
 .nav a {
-    margin: 0 10px;
-    color: #fff;
-    text-decoration: none;
-    transition: opacity 0.3s;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.2s;
 }
 
 .nav a:hover {
-    opacity: 0.8;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
+/* Profile Box Styles */
 .profile-box {
-    background-color: #FFF;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 5px;
-    max-width: 800px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    margin: 30px 50px;
+    padding: 30px;
+    border-radius: 10px;
 }
 
 .profile-section {
     margin-bottom: 20px;
 }
 
-button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.btn-edit {
-    background-color: #4CAF50;
-}
-
-.btn-delete {
-    background-color: #4CAF50;
-}
-
-button:hover {
-    opacity: 0.8;
+h2, h3 {
+    margin-top: 0;
 }
 
 .tabs {
     display: flex;
-    border-bottom: 2px solid #ddd;
-    margin-bottom: 15px;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 .tab-link {
     padding: 10px 15px;
-    margin: 0;
-    color: #0D47A1;
+    border-radius: 8px;
+    background-color: #f4f5f7;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 
-.tab-link.active {
-    color: #fff;
-    background-color: #0D47A1;
+.tab-link:hover {
+    background-color: #e2e5eb;
 }
 
-.tab-link:hover {
-    background-color: #0D47A1;
-    color: #fff;
+.tab-link.active {
+    background-color: #4a66f7;
+    color: white;
 }
 
 .tab-content {
@@ -99,80 +90,58 @@ button:hover {
     display: block;
 }
 
+.btn-add-record, .btn-add-med, .btn-update-allergies, .btn-add-prescriptions, .btn-add-appointments {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: #4a66f7;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-add-record:hover, .btn-add-med:hover, .btn-update-allergies:hover, .btn-add-prescriptions:hover, .btn-add-appointments:hover {
+    background-color: #3a56d7;
+}
+
 .profile-actions {
     display: flex;
     gap: 10px;
-    align-items: center;
-    margin-top: 20px;
+    justify-content: space-between;
 }
 
-.btn-add-record {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px 15px;
+.btn-edit, .btn-delete, .create-button {
+    padding: 10px 20px;
+    border-radius: 8px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    margin-bottom: 15px;
-    display: block;
+    transition: background-color 0.2s;
 }
 
-.btn-add-med {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 15px;
-    display: block;
+.btn-edit {
+    background-color: #ffc107;
+    color: black;
 }
 
-.btn-update-allergies {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 15px;
-    display: block;
+.btn-delete {
+    background-color: #ff3f40;
+    color: white;
 }
 
-.btn-add-prescriptions {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 15px;
-    display: block;
+.create-button {
+    background-color: #4a66f7;
+    color: white;
 }
 
-.btn-add-appointments {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 15px;
-    display: block;
+.btn-edit:hover {
+    background-color: #ffa000;
 }
 
-.medical-records {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 15px;
+.btn-delete:hover {
+    background-color: #ff2021;
 }
 
-.medical-record-details {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 15px;
+.create-button:hover {
+    background-color: #3a56d7;
 }
 
-.medical-record-details h4 {
-    margin-top: 0;
-}
