@@ -1,0 +1,147 @@
+body {
+    font-family: 'Public Sans', sans-serif;
+    background-color: #f4f5f7;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header Styles */
+.header {
+    background-color: #4a66f7;
+    color: white;
+    padding: 20px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header h1 {
+    margin: 0;
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.2s;
+}
+
+.nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Container Styles */
+.container {
+    margin: 30px 50px;
+}
+
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.create-button {
+    background-color: #4a66f7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.create-button:hover {
+    background-color: #3a56d7;
+}
+
+.search-container {
+    display: flex;
+    gap: 10px;
+}
+
+.search-container input {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    width: 300px;
+}
+
+.search-container button {
+    background-color: #4a66f7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.search-container button:hover {
+    background-color: #3a56d7;
+}
+
+.filters select {
+    padding: 10px;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.dashboard {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 20px;
+}
+
+.prescription-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.prescription-list li {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.patient-info,
+.prescription-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.status-label {
+    padding: 5px 10px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.status-label.active {
+    background-color: #4a66f7;
+    color: white;
+}
+
