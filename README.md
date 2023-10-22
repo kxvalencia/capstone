@@ -1,8 +1,50 @@
-# Captstone Project
+# Valencia Medical Portal (Capstone Project)
 
-Website domain: https://capstone-main.000webhostapp.com/
 
-This guide was made with Windows Operating Systems in mind. If you need another platform installation process, let me know or submit an [Issue](https://github.com/kxvalencia/capstone/issues).
+<img align="right" alt="Logo" width="300px" src="https://github.com/kxvalencia/capstone/assets/143300278/1e06d17a-4e9e-419c-a257-c5b4811786d4" />
+
+Live domain: https://capstone-main.000webhostapp.com/
+
+Local domain: http://localhost/capstone
+
+<br>
+
+---
+
+<br>
+
+## README Sections
+
+| SECTION | EXPLANATION |
+| :--- | :--- |
+| [IMAGE PREVIEWS]() | Shows images of various pages |
+| [WEBSITE BREAKDOWN]() | Explains each page and it's functionality |
+| [LOCAL DEVELOPMENT SETUP]() | How to setup a local development environment |
+
+
+<br>
+
+---
+
+<br>
+
+## Image Previews
+
+![Screenshot 2023-10-21 at 21-13-34 Create a Patient](https://github.com/kxvalencia/capstone/assets/143300278/83a31f2b-2c1e-43c5-b104-e6bb8a21cde3)
+
+<br>
+
+![Screenshot 2023-10-21 at 21-10-04 Valencia Medical](https://github.com/kxvalencia/capstone/assets/143300278/5d045b0f-7a23-46ff-b05e-c9e737a01845)
+
+## Website Breakdown
+
+- Sign-Up and Login:
+
+
+
+<br>
+
+---
 
 <br>
 
