@@ -2,15 +2,14 @@
 
 include 'db.php';
 
-$patients = []; // An empty array to store the patient names
+$patients = [];
 
 try {
-    // Using $pdo instead of $conn, if that's the name in your db.php
-    $stmt = $pdo->prepare("SELECT name FROM patients"); // Query to select patient names
+
+    $stmt = $pdo->prepare("SELECT patient_id, name FROM patients");
     $stmt->execute();
 
-    // Fetch all patient names and store them in the $patients array
-    $patients = $stmt->fetchAll(PDO::FETCH_COLUMN, 0);
+    $patients = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
@@ -52,8 +51,9 @@ try {
 
         <ul class="patient-list">
             <?php foreach ($patients as $patient): ?>
-                <li><a class="patient-name" href="#">
-                        <?php echo htmlspecialchars($patient); ?>
+                <li><a class="patient-name" href="patient_details.php?patient_id=<?php echo $patient['patient_id']; ?>"
+                        target="_blank">
+                        <?php echo htmlspecialchars($patient['name']); ?>
                     </a></li>
             <?php endforeach; ?>
         </ul>
@@ -61,32 +61,32 @@ try {
 
     <script>
         function searchUsers() {
-            const query = document.getElementById('searchBox').value;
-            fetch('search.php', {
-                method: 'POST',
-                body: new URLSearchParams(`query=%${query}%`),
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                }
-            })
-                .then(response => response.json())
-                .then(users => {
-                    const patientList = document.querySelector('.patient-list');
-                    patientList.innerHTML = '';
-                    users.forEach(user => {
-                        const listItem = document.createElement('li');
-                        const link = document.createElement('a');
-                        link.classList.add('patient-name');
-                        link.href = "#";
-                        link.textContent = user.name;
-                        listItem.appendChild(link);
-                        patientList.appendChild(listItem);
-                    });
-                })
-                .catch(error => {
-                    console.error('Error fetching search results:', error);
-                });
+    const query = document.getElementById('searchBox').value;
+    fetch('search.php', {
+        method: 'POST',
+        body: new URLSearchParams(`query=%${query}%`),
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
         }
+    })
+    .then(response => response.json())
+    .then(users => {
+        const patientList = document.querySelector('.patient-list');
+        patientList.innerHTML = '';
+        users.forEach(user => {
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+            link.classList.add('patient-name');
+            link.href = `patient_details.php?patient_id=${user.patient_id}`; // <-- set href with patient_id
+            link.textContent = user.name;
+            listItem.appendChild(link);
+            patientList.appendChild(listItem);
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching search results:', error);
+    });
+}
     </script>
 </body>
 
