@@ -44,6 +44,17 @@ Local domain: http://localhost/capstone
 ## Website Breakdown
 
 - Sign-Up and Login:
+    - http://localhost/capstone/ 
+    - Admins Can signup and log in.
+    - Allows access to patient creator page and patient information.
+
+- Patient Page:
+  - http://localhost/capstone/patient.php
+  - See all patients and search for specific patient. 
+
+- Create Patient Page:
+    - http://localhost/capstone/create_patient_page.php 
+    - Create a patient with various information such as name, age, sex, height, weight, blood type, etc.
 
 
 <br>
