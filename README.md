@@ -1,6 +1,5 @@
 # Valencia Medical Portal (Capstone Project)
 
-
 <img align="right" alt="Logo" width="300px" src="https://github.com/kxvalencia/capstone/assets/143300278/1e06d17a-4e9e-419c-a257-c5b4811786d4" />
 
 Live domain: https://capstone-main.000webhostapp.com/
@@ -17,9 +16,9 @@ Local domain: http://localhost/capstone
 
 | SECTION | EXPLANATION |
 | :--- | :--- |
-| [IMAGE PREVIEWS]() | Shows images of various pages |
-| [WEBSITE BREAKDOWN]() | Explains each page and it's functionality |
-| [LOCAL DEVELOPMENT SETUP]() | How to setup a local development environment |
+| [IMAGE PREVIEWS](https://github.com/kxvalencia/capstone#image-previews) | Shows images of various pages |
+| [WEBSITE BREAKDOWN](https://github.com/kxvalencia/capstone#website-breakdown) | Explains each page and it's functionality |
+| [LOCAL DEVELOPMENT SETUP](https://github.com/kxvalencia/capstone#local-development) | How to setup a local development environment |
 
 
 <br>
@@ -36,10 +35,15 @@ Local domain: http://localhost/capstone
 
 ![Screenshot 2023-10-21 at 21-10-04 Valencia Medical](https://github.com/kxvalencia/capstone/assets/143300278/5d045b0f-7a23-46ff-b05e-c9e737a01845)
 
+<br>
+
+---
+
+<br>
+
 ## Website Breakdown
 
 - Sign-Up and Login:
-
 
 
 <br>
