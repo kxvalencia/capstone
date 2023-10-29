@@ -1,74 +1,52 @@
 <!DOCTYPE html>
 <html>
 
-<link rel="stylesheet" href="login.css">
-<!--<div class="header" id="head">-->
-    
-</div>
 <head>
+    <link rel="stylesheet" href="login.css">
     <title>Signup/Login</title>
 </head>
 
 <body>
     <div class="header">
-        <h1>
-            Welcome to Valencia Medical
-        </h1>
+        <h1>Welcome to Valencia Medical</h1>
     </div>
 
     <div class="valencia">
         <div class="formBox">
-            <div class="buttonBox">
-            <div id="btn"></div>
-                <button type="button" class="toggleButton" onclick="signupID()">Sign-up</button>
-                <button type="button" class="toggleButton" onclick="loginID()">Login</button>
-
+            <div class="tabs">
+                <button class="tabButton active" onclick="showTab('signupID')">Sign-up</button>
+                <button class="tabButton" onclick="showTab('loginID')">Login</button>
             </div>
-            <form id="signupID" class="inputGroup" action="auth.php" method="post">
-                <input type="text" placeholder="Name" class="inputField" name="signup-name"><br>
-                <input type="text" placeholder="Email" class="inputField" name="signup_email"><br>
-                <input type="password" placeholder="Password" class="inputField" name="signup_password"><br>
-                <button type="submit" class="submitButton" name="signup" value="Signup">Sign-up</button>
-            </form>
-            <form id="loginID" class="inputGroup" action="auth.php" method="post">
-                <input type="text" placeholder="Email" class="inputField" name="signup_email">
-                <input type="password" placeholder="Password" name="login_password">
-                <button type="submit" class="submitButton" name="login" value="Login">Login</button>
 
+            <form id="signupID" class="inputGroup" action="auth.php" method="post">
+                <input type="text" placeholder="Name" class="inputField" name="signup-name">
+                <input type="text" placeholder="Email" class="inputField" name="signup_email">
+                <input type="password" placeholder="Password" class="inputField" name="signup_password">
+                <button type="submit" class="submitButton" name="signup">Sign-up</button>
+            </form>
+
+            <form id="loginID" class="inputGroup hidden" action="auth.php" method="post">
+                <input type="text" placeholder="Email" class="inputField" name="login_email">
+                <input type="password" placeholder="Password" class="inputField" name="login_password">
+                <button type="submit" class="submitButton" name="login">Login</button>
             </form>
         </div>
     </div>
-    <script>
-        var x = document.getElementById("signupID");
-        var y = document.getElementById("loginID");
-        var z = document.getElementById("btn");
 
-        function loginID(){
-            x.style.left="-400px";
-            y.style.left="50px";
-            z.style.left="110px";
-        }
-        function signupID(){
-            x.style.left="50px";
-            y.style.left="450px";
-            z.style.left="0";
+    <script>
+        function showTab(id) {
+            var forms = document.getElementsByClassName('inputGroup');
+            for(var i = 0; i < forms.length; i++) {
+                forms[i].classList.add('hidden');
+            }
+            document.getElementById(id).classList.remove('hidden');
+
+            var buttons = document.getElementsByClassName('tabButton');
+            for(var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove('active');
+            }
+            event.currentTarget.classList.add('active');
         }
     </script>
-
-<h2>Signup</h2>
-<form action="auth.php" method="post">
-    Name: <input type="text"  name="signup_name"><br>
-    Email: <input type="text"  name="signup_email"><br>
-    Password: <input type="password" name="signup_password"><br>
-    <input type="submit" name="signup" value="Signup">
-</form>
-
-<h2>Login</h2>
-<form action="auth.php" method="post" >
-    Email: <input type="text" name="login_email"><br>
-    Password: <input type="password" name="login_password"><br>
-    <input type="submit" name="login" value="Login">
-</form>
-
 </body>
 </html>
