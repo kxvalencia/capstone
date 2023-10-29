@@ -1,162 +1,106 @@
+\/* General Body Styling */
 body {
     font-family: 'Public Sans', sans-serif;
-    background-color: #E3F2FD;
+    background-color: #f4f5f7;
     margin: 0;
     padding: 0;
 }
-.header {
-    background-color: #0D47A1;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-    font-weight: 500;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-radius: 15px;
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-.nav {
+/* Header Styles */
+.header {
+    background-color: #4a66f7;
+    color: white;
+    padding: 20px 50px;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-weight: 900;
+    font-size: 1.8rem;
+}
+
+.header p {
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+/* Valencia Medical Form Box Styles */
+.valencia {
     display: flex;
     justify-content: center;
-    padding: 15px;
+    align-items: center;
+    height: calc(100vh - 100px); /* Full height minus header height */
 }
 
-.nav a {
-    margin: 0 10px;
-    color: #fff;
-    text-decoration: none;
-    transition: opacity 0.3s;
+.formBox {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 320px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.nav a:hover {
-    opacity: 0.8;
+.inputField {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f4f5f7;
+    outline: none;
 }
 
-.profile-box {
-    background-color: #FFF;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 5px;
-    max-width: 800px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.profile-section {
-    margin-bottom: 20px;
-}
-
-button {
-    padding: 10px 15px;
+.submitButton {
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 8px;
     border: none;
-    border-radius: 5px;
+    background-color: #4a66f7;
+    color: white;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 
-.action-buttons button {
-    margin-right: 10px;
+.submitButton:hover {
+    background-color: #3a56d7;
 }
 
-.btn-edit {
-    background-color: #4CAF50;
+/* Tab Styles */
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
-.btn-delete {
-    background-color: #4CAF50;
-}
-button:hover {
-    opacity: 0.8;
-}
-
-.return-link {
-    display: block;
-    margin-top: 20px;
-}
-
-.valencia{
-height: 100%;
-width: 100%;
-background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(valenciaPhoto.jpg);
-background-position: center;
-background-size: cover;
-position: absolute;
+.tabButton {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    background: none;
+    border: none;
+    color: #4a66f7;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.2s, background-color 0.2s;
 }
 
-.formBox{
-width: 380px;
-height: 480px;
-position: relative;
-margin: 6% auto;
-background: #fff;
-padding: 5px;
-overflow: hidden;
-border-radius: 10px;
+.tabButton.active {
+    color: white;
+    background-color: #4a66f7;
 }
 
-.buttonBox{
-width: 220px;
-margin: 35px auto;
-position: relative;
-box-shadow: 0 0 20px 9px #ff61241f;
-border-radius: 30px;
+.tabButton:hover {
+    color: white;
+    background-color: #3a56d7;
 }
 
-.toggleButton{
-padding: 10px 30px;
-cursor: pointer;
-background: transparent;
-border: 0;
-outline: none;
-position: relative;
-}
-
-#btn{
-top: 0;
-left: 0;
-position: absolute;
-width: 110px;
-height: 100%;
-background: linear-gradient(to right, #103cff, #0ed5f4);
-border-radius: 30px;
-transition: .5s;
-}
-
-.inputGroup{
-top: 180px;
-position: absolute;
-width: 280px;
-transition: .5s;
-}
-
-.inputField{
-width: 100%;
-padding: 10px 0;
-margin: 5px 0;
-border-left: 0;
-border-top: 0;
-border-right: 0;
-border-bottom: 1px solid #999;
-outline: none;
-background: transparent;
-}
-
-.submitButton{
-width: 85%;
-padding: 10px 30px;
-cursor: pointer;
-display: block;
-margin: auto;
-background: linear-gradient(to right, #103cff, #0ed5f4);
-border: 0;
-outline: none;
-border-radius: 30px;
-}
-
-#signupID{
-left: 50px;
-}
-
-#loginID{
-left: 450px;
+/* Hidden class for forms */
+.hidden {
+    display: none;
 }
