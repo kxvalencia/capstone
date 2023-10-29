@@ -1,45 +1,148 @@
 body {
-        background-color: #E3F2FD;
+    font-family: 'Public Sans', sans-serif;
+    background-color: #f4f5f7;
+    margin: 0;
+    padding: 0;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header Styles */
 .header {
-        padding: 30px;
-        background: #0D47A1;
-        color: white;
-        font-size: 10px;
-        width: 95%;
-        border-radius: 5px;
+    background-color: #4a66f7;
+    color: white;
+    padding: 20px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1000;
 }
 
-.content {
-  padding: 16px;
+.header h1 {
+    margin: 0;
+    font-weight: 900;
+    font-size: 1.5rem;
 }
 
+.header .profile {
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
 
+.header .profile h1 {
+    margin: 0;
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.header .profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.2s;
+}
+
+.nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Sticky Header Styles */
 .sticky {
-  position: fixed;
-  top: 0;
-  width: 95%
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
-.sticky + .content {
-  padding-top: 102px;
+/* Wrapper and Nav Styles */
+.wrapper {
+    display: flex;
 }
 
-a:link {
-  color: white;
-  background-color: transparent;
-  text-decoration: none;
+.nav1 {
+    background-color: #ffffff;
+    padding: 20px;
+    width: 250px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
 }
 
-a:visited {
-  color: white;
-  background-color: transparent;
-  text-decoration: none;
+.nav1 .navBar .logo img {
+    width: 30px;
+    height: 30px;
 }
 
-a:hover {
-  color: white;
-  background-color: transparent;
-  text-decoration: none;
+.nav1 .navBar .logo span {
+    margin-left: 10px;
+}
+
+.nav1 a, .nav1 form input[type="submit"] {
+    display: block;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    background-color: #f4f5f7;
+    transition: background-color 0.2s;
+}
+
+.nav1 a:hover, .nav1 form input[type="submit"]:hover {
+    background-color: #e1e4e8;
+}
+
+/* Main Body and Card Styles */
+.mainBody {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.mainBody .header1 {
+    background-color: #4a66f7;
+    height: 200px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.mainBody .followingWrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.mainBody .followingWrapper .card {
+    flex-grow: 1;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mainBody .followingWrapper .card img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.mainBody .followingWrapper .card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
 }
