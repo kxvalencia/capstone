@@ -1,28 +1,17 @@
-<?php
-session_start();
-
-// If not logged in, redirect to the auth.html page
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header("Location: auth.html");
-    exit;
-}
-?>
-
 <!DOCTYPE html>
 
 <html>
     
-    <link rel="stylesheet" href="dashboardTest.css">
+    <link rel="stylesheet" href="styles5.css">
     
     <body>
     
     <div class="header" id="head">
         <!--<h1><a href="create_patient_page.php">Create Page</a> <a href="https://www.tacobell.com/">Notice</a> <span style="float:right;"><a href="index.html">Logout</a> Nurse Info</span></h1>-->
         <div class="profile">
-        <a href="#"><img src="ProfilePic.png" alt=""/></a>
-      
+        <a href="#"><img src="./img/ProfilePic.png" alt=""/></a>
+        <h1>Valencia Medical</h1>
       </div>
-      <h1>Dashboard</h1>
       <div class="nav">
         <a href="patient.php">Patients</a>
         <a href="prescriptions.php">Prescriptions</a>
@@ -61,7 +50,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>User Dashboard</title>
+<title>Valencia Medical - Dashboard</title>
 </head>
 <body>
 <!-- Moved into 'Nav1 div'
@@ -72,56 +61,52 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <input type="submit" value="Logout">
 </form>
       -->  
-<div class="wrapper">               
+<div class="wrapper">
   <nav class="nav1">
-  </p><h1>Welcome <?php echo $_SESSION['name']; ?>!</h1>
-  <p>email: <?php echo $_SESSION['email']; ?>                       
-      <div class="logo">                      
-        <img src="logo.png" alt="">
+      </p><h1>Welcome <?php echo $_SESSION['name']; ?>!</h1>
+      <p>Email: <?php echo $_SESSION['email']; ?>
+    <div class="navBar">
+      <div class="logo">
+        <img src="./img/logo.png" alt="" />
         <span>Valencia Medical</span>
-      </div>                               
-      
+        
+      </div>
+
       <a href="#">Dashboard</a>
       <a href="#">Example 1</a>
       <a href="#">Example 2</a>
       <a href="#">Example 3</a>
       <a href="#">Example 4</a>
 
+      <form action="logout.php" method="post">
+      <input type="submit" value="Logout">
+      </form>
 
-    <form action="logout.php" class="logout" method="post">
-    <input type="submit" value="Logout">
-    </form>
-      <a href="" class="logout">Logout</a>
-    </div>                                  
-  </nav>                                     
-  <div class="mainBody">             
+      <!--<a href="#" class="logout">logout</a> -->
+    </div> 
+  </nav>
+
+  <div class="mainBody">
     <div class="header1">
-    <span></span>
+      
     </div>
     <div class="followingWrapper">
-  <div class="card">
-    <img src="AppointmentsPic.png" alt=""/>
-    <h3>7 Patients</h3>
-  </div>
-  <div class="card">
-    <img src="PatientPic.png" alt=""/>
-    <h3>5 Upcoming Appointments</h3>
-  </div>
-  
-  <div class="card">
-  <img src="HospitalPic.png" alt=""/>
-    <h3>Insert Widget</h3>
-  </div>
-  
-  <div class="card">
-  <img src="RandomPic.png" alt=""/>
-    <h3>Insert Widget</h3>
-  </div>
-</div>
-</div>
+      <div class="card">
+        <img src="./img/AppointmentsPic.png" alt=""/>
+        <h3>7 Patients</h3>
+      </div>
+      <div class="card">
+        <img src="./img/PatientPic.png" alt=""/>
+        <h3>5 Upcoming Appointments</h3>
+      </div>
+      <div class="card">
+        <img src="./img/HospitalPic.png" alt=""/>
+        <h3>Insert Widget</h3>
+      </div>
+      <div class="card">
+        <img src="./img/HospitalPic.png" alt=""/>
+        <h3>Insert Widget</h3>
+      </div>
 
-<!-- You can add more HTML content here, and if needed, embed more PHP wherever necessary. -->
-
-</body>
-</html>
-
+    </div>
+  </div>
