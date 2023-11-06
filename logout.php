@@ -10,6 +10,6 @@ unset($_SESSION['email']);
 session_destroy();
 
 // Redirect to the home page
-header('Location: index.html');
+header('Location: login.php');
 exit;
 ?>
