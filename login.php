@@ -11,6 +11,15 @@
         <h1>Welcome to Valencia Medical</h1>
     </div>
 
+    <?php if(isset($_SESSION['flash_message'])): ?>
+        <div class="message">
+            <?php 
+                echo $_SESSION['flash_message']; 
+                unset($_SESSION['flash_message']);
+            ?>
+        </div>
+    <?php endif; ?>
+
     <div class="valencia">
         <div class="formBox">
             <div class="tabs">
@@ -19,15 +28,15 @@
             </div>
 
             <form id="signupID" class="inputGroup" action="auth.php" method="post">
-                <input type="text" placeholder="Name" class="inputField" name="signup-name">
-                <input type="text" placeholder="Email" class="inputField" name="signup_email">
-                <input type="password" placeholder="Password" class="inputField" name="signup_password">
+            <input type="text" placeholder="Name" class="inputField" name="signup_name">
+                <input type="email" placeholder="Email" class="inputField" name="signup_email" required>
+                <input type="password" placeholder="Password" class="inputField" name="signup_password" required>
                 <button type="submit" class="submitButton" name="signup">Sign-up</button>
             </form>
 
             <form id="loginID" class="inputGroup hidden" action="auth.php" method="post">
-                <input type="text" placeholder="Email" class="inputField" name="login_email">
-                <input type="password" placeholder="Password" class="inputField" name="login_password">
+                <input type="email" placeholder="Email" class="inputField" name="login_email" required>
+                <input type="password" placeholder="Password" class="inputField" name="login_password" required>
                 <button type="submit" class="submitButton" name="login">Login</button>
             </form>
         </div>
