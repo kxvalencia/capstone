@@ -1,12 +1,26 @@
 <?php
-session_start(); // Start the session at the beginning of the script
+include 'db.php'; 
 
-// Check if the user is not logged in, then redirect to login page
+session_start();
+
+// Check if the user is logged in, otherwise redirect to login page
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header("Location: login.php");
     exit;
 }
 
+$patientCount = 0;
+
+try {
+    $stmt = $pdo->prepare("SELECT COUNT(*) FROM patients");
+    $stmt->execute();
+    
+    // Fetch the row count
+    $patientCount = $stmt->fetchColumn();
+} catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -104,7 +118,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <div class="followingWrapper">
       <div class="card">
         <img src="./img/AppointmentsPic.png" alt=""/>
-        <h3>7 Patients</h3>
+        <h3><?php echo $patientCount; ?> Patients</h3>
       </div>
       <div class="card">
         <img src="./img/PatientPic.png" alt=""/>
