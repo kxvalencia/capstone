@@ -124,6 +124,21 @@ CREATE TABLE `patients` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 ```
 
+`appointments` table
+
+```sql
+CREATE TABLE `appointments` (
+    `appointment_id` INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    `patient_id` INT(11) UNSIGNED NOT NULL,
+    `appointment_date` DATETIME NOT NULL,
+    `appointment_time` TIME, -- Assuming you need only the time part
+    `physician` VARCHAR(255) NOT NULL,
+    `reason_for_visit` ENUM('First Visit', 'Follow-up Visit', 'Wellness Check', 'Pre-Op Consultation', 'Surgery', 'Post-op Consultation'),
+    `notes` TEXT,
+    FOREIGN KEY (`patient_id`) REFERENCES `patients`(`patient_id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+```
+
 <br>
 
 ### 4. Accessing The Project
