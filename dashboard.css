@@ -146,3 +146,48 @@ a {
     font-weight: 600;
     color: #333;
 }
+
+.searchBox {
+    padding: 5px;
+    margin-top: 5px;
+    background-color: aqua;
+}
+
+.searchBar{
+    background-color: aqua;
+}
+
+.searchButton{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.mainBox{
+    background-color: #4a66f7;
+    width: 1000px;
+    height: 400px;
+    margin-top: 10px;
+    border-radius: 8px;
+    display: none;  
+}
+
+table, tr, td{
+    border: 2px solid black;
+    background-color: aqua;
+    margin: 3px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 5px;
+}
+
+th {
+    background-color: darkcyan;
+}
+
+.closeButton{
+   
+    margin-left: 800px;
+    background-color: orangered;
+}
