@@ -63,6 +63,7 @@ a {
 
 h2, h3 {
     margin-top: 0;
+    
 }
 
 .tabs {
@@ -170,4 +171,41 @@ table {
 }
 th, td { 
     font-weight: bold;
+}
+
+.submit-btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    background-color: green;
+    color: white;
+    margin-top: 10px;
+}
+
+.new-link {
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-color: #4a66f7;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    /*display: flex;
+    margin-left: 900px;*/
+    color: white;
+    float: right;
+    
+   
+}
+
+.edit-btn {
+    background-color: yellow;
+    border-radius: 8px;
+    padding: 5px 10px;
+}
+
+.remove-btn {
+    background-color: red;
+    border-radius: 8px;
+    padding: 5px 10px;
 }
