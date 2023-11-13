@@ -34,12 +34,6 @@ a {
     gap:10px;
 }
 
-.header .profile h1 {
-    margin: 0;
-    font-weight: 900;
-    font-size: 1.5rem;
-}
-
 .header .profile img {
     width: 50px;
     height: 50px;
@@ -71,97 +65,37 @@ a {
     width: 100%;
 }
 
-/* Wrapper and Nav Styles */
-.wrapper {
-    display: flex;
-}
-
-.nav1 {
-    background-color: #ffffff;
-    padding: 20px;
-    width: 250px;
-    height: 100vh;
-    position: sticky;
-    top: 0;
-}
-
-.nav1 .navBar .logo img {
-    width: 30px;
-    height: 30px;
-}
-
-.nav1 .navBar .logo span {
-    margin-left: 10px;
-}
-
-.nav1 a, .nav1 form input[type="submit"] {
-    display: block;
-    padding: 10px 15px;
-    margin: 10px 0;
-    border-radius: 8px;
-    background-color: #f4f5f7;
-    transition: background-color 0.2s;
-}
-
-.nav1 a:hover, .nav1 form input[type="submit"]:hover {
-    background-color: #e1e4e8;
-}
-
-/* Main Body and Card Styles */
+/* Main Body Styles */
 .mainBody {
     flex-grow: 1;
     padding: 20px;
 }
 
-.mainBody .header1 {
-    background-color: #4a66f7;
-    height: 200px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-}
-
-.mainBody .followingWrapper {
-    display: flex;
-    gap: 20px;
-}
-
-.mainBody .followingWrapper .card {
-    flex-grow: 1;
-    background-color: #ffffff;
+.mainBody .dashboard-overview,
+.mainBody .patient-reports-section,
+.mainBody .financial-analytics-section,
+.mainBody .additional-analytics-section {
+    background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.mainBody .followingWrapper .card img {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 10px;
-}
-
-.mainBody .followingWrapper .card h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #333;
-}
-
-/* Dashboard Overview Styles */
-.dashboard-overview h2 {
+.mainBody h2 {
     color: #333;
     font-size: 1.8rem;
     margin-bottom: 1rem;
-  }
-  
-  .kpi-container {
+}
+
+.kpi-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     margin-bottom: 2rem;
-  }
-  
-  .kpi {
+}
+
+.kpi {
     flex: 1;
     min-width: 220px;
     background-color: #fff;
@@ -171,18 +105,57 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  .kpi span {
+}
+
+.kpi span {
     font-weight: bold;
+}
+
+/* Table Styles */
+.patient-reports-section table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.patient-reports-section th,
+.patient-reports-section td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.patient-reports-section th {
+    background-color: #f4f5f7;
+}
+
+.patient-reports-section tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.financial-analytics-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
-  /* Patient Reports Section Styles */
-  .patient-reports-section,
-  .financial-analytics-section {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  .financial-content {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
   }
+  
+  .financial-text {
+    max-width: 50%;
+  }
+  
+  .financial-chart {
+    max-width: 50%;
+  }
+  
+  .financial-chart img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
