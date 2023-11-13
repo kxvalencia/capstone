@@ -77,14 +77,15 @@ $appointments = getAllAppointments($pdo);
 
     <div class="profile-box">
         <div class="profile-section">
-            <h2>Create Appointment</h2>
+            <h2>Create Appointment <button class="new-link"><a href="Appointments_new.php">Create New Appointment</a></button></h2>
+            
             <!-- Appointment Form Section -->
             <form action="Appointments_new.php" method="post">
                 <input type="hidden" name="appointment_id"
                     value="<?php echo $selectedAppointment['appointment_id'] ?? ''; ?>">
 
                 <!-- Patient ID Dropdown -->
-                <label for="patient_id">Patient ID:</label>
+                <p><label for="patient_id">Patient ID: </label>
                 <select name="patient_id">
                     <?php foreach ($patients as $patient): ?>
                         <option value="<?php echo $patient['patient_id']; ?>" <?php echo $selectedAppointment && $selectedAppointment['patient_id'] == $patient['patient_id'] ? 'selected' : ''; ?>>
@@ -92,23 +93,23 @@ $appointments = getAllAppointments($pdo);
                         </option>
                     <?php endforeach; ?>
                 </select>
-                <br />
+                    </p>
 
-                <label for="appointment_date">Date:</label>
+                <p><label for="appointment_date">Date: </label>
                 <input type="date" name="appointment_date"
-                    value="<?php echo $selectedAppointment['appointment_date'] ?? ''; ?>">
-                <br />
+                    value="<?php echo $selectedAppointment['appointment_date'] ?? ''; ?>"></p>
+                
 
-                <label for="appointment_time">Time:</label>
+                <p><label for="appointment_time">Time: </label>
                 <input type="time" name="appointment_time"
                     value="<?php echo $selectedAppointment['appointment_time'] ?? ''; ?>">
-                <br />
+                    </p>
 
-                <label for="physician">Physician:</label>
+                <p><label for="physician">Physician: </label>
                 <input type="text" name="physician" value="<?php echo $selectedAppointment['physician'] ?? ''; ?>">
-                <br />
+                    </p>
 
-                <label for="reason_for_visit">Reason for Visit:</label>
+                <p><label for="reason_for_visit">Reason for Visit: </label>
                 <select name="reason_for_visit">
                     <?php
                     $reasonsForVisit = ['First Visit', 'Follow-up Visit', 'Wellness Check', 'Pre-Op Consultation', 'Surgery', 'Post-op Consultation'];
@@ -118,18 +119,19 @@ $appointments = getAllAppointments($pdo);
                         </option>
                     <?php endforeach; ?>
                 </select>
-                <br />
+                    </p>
 
-                <label for="notes">Notes:</label>
+                <p><label for="notes">Notes:</label></p>
                 <textarea name="notes"><?php echo $selectedAppointment['notes'] ?? ''; ?></textarea>
                 <br />
 
                 <input type="submit"
                     value="<?php echo isset($selectedAppointment) ? 'Update Appointment' : 'Create Appointment'; ?>">
+                <div>
+                    <button class="submit-btn">Submit</button>
+                </div>
             </form>
-            <div>
-                <a href="Appointments_new.php">Create New Appointment</a>
-            </div>
+           
         </div>
 
         <!-- Appointments List -->
@@ -159,12 +161,13 @@ $appointments = getAllAppointments($pdo);
                     <td><?php echo htmlspecialchars($appointment['physician']); ?></td>
                     <td><?php echo htmlspecialchars($appointment['reason_for_visit']); ?></td>
                     <td><?php echo htmlspecialchars($appointment['notes']); ?></td>
-                    <td><a href="Appointments_new.php?select_id=<?php echo $appointment['appointment_id']; ?>"><button>Edit</button></a></td>
-                    <td><a href="Appointments_new.php?delete_id=<?php echo $appointment['appointment_id']; ?>" onclick="return confirm('Are you sure you want to delete this appointment?');"><button>Remove</button></a></td>
+                    <td><a href="Appointments_new.php?select_id=<?php echo $appointment['appointment_id']; ?>"><button class="edit-btn">Edit</button></a></td>
+                    <td><a href="Appointments_new.php?delete_id=<?php echo $appointment['appointment_id']; ?>" onclick="return confirm('Are you sure you want to delete this appointment?');"><button class="remove-btn">Remove</button></a></td>
                 </tr>
             <?php endforeach; ?>
         </table>
     </div>
+    
 </body>
 
 </html>
