@@ -34,7 +34,7 @@ try {
         <div class="nav">
             <a href="patient.php">Patients</a>
             <a href="prescriptions_page.php">Prescriptions</a>
-            <a href="appointments_page.php">Appointments</a>
+            <a href="Appointments.php">Appointments</a>
             <a href="reports_analytics_page.php">Reports & Analytics</a>
         </div>
     </div>
@@ -51,7 +51,7 @@ try {
 
         <ul class="patient-list">
             <?php foreach ($patients as $patient): ?>
-                <li><a class="patient-name" href="patient_details.php?patient_id=<?php echo $patient['patient_id']; ?>"
+                <li><a class="patient-name" href="patient_profile.php?patient_id=<?php echo $patient['patient_id']; ?>"
                         target="_blank">
                         <?php echo htmlspecialchars($patient['name']); ?>
                     </a></li>
@@ -77,7 +77,7 @@ try {
             const listItem = document.createElement('li');
             const link = document.createElement('a');
             link.classList.add('patient-name');
-            link.href = `patient_details.php?patient_id=${user.patient_id}`; // <-- set href with patient_id
+            link.href = `patient_profile.php?patient_id=${user.patient_id}`; // <-- set href with patient_id
             link.textContent = user.name;
             listItem.appendChild(link);
             patientList.appendChild(listItem);
