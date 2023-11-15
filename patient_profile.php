@@ -33,7 +33,7 @@ if (isset($_GET['patient_id'])) {
 
 <body>
     <div class="header">
-        <h1>Patient Details</h1>
+        <h1>Patient Profile</h1>
         <div class="nav">
             <a href="patient.php">Patients</a>
             <a href="prescriptions.php">Prescriptions</a>
@@ -47,9 +47,6 @@ if (isset($_GET['patient_id'])) {
             <h2>
                 <?php echo htmlspecialchars($patient['name']); ?>
             </h2>
-            <p><strong>Name:</strong>
-                <?php echo htmlspecialchars($patient['name']); ?>
-            </p>
             <p><strong>Sex:</strong>
                 <?php echo $patient['sex']; ?>
             </p>
