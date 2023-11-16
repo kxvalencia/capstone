@@ -34,14 +34,14 @@
       
       
     <div class="mainBody">
-    <div class="header1">
-      
-    </div>
+    
     <div class="followingWrapper">
       <div class="card">
         <h3>User Info</h3>
-        <p>Email:</p>
         <p>Phone Number:</p>
+        <p>Email:</p>
+        <p>Social Security:</p>
+        <p>Perscriptions:</p>
       </div>
       <div class="card">
         <h3>Change Password</h3>
@@ -65,6 +65,6 @@
       </div>
 
     </div>
-  </div>
+    </div>
       
 </html>
