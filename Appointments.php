@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute([$patientId, $appointmentDate, $appointmentTime, $physician, $reasonForVisit, $notes]);
     }
 
-    header("Location: Appointments_new.php");
+    header("Location: Appointments.php");
     exit();
 }
 
@@ -83,7 +83,7 @@ $appointments = getAllAppointments($pdo);
             </h2>
 
             <!-- Appointment Form Section -->
-            <form action="Appointments_new.php" method="post">
+            <form action="Appointments.php" method="post">
                 <input type="hidden" name="appointment_id"
                     value="<?php echo $selectedAppointment['appointment_id'] ?? ''; ?>">
 
