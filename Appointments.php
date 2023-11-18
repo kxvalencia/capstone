@@ -45,7 +45,7 @@ if (isset($_GET['delete_id']) && $_GET['delete_id'] != '') {
     $stmt = $pdo->prepare("DELETE FROM appointments WHERE appointment_id = ?");
     $stmt->execute([$_GET['delete_id']]);
 
-    header("Location: Appointments_new.php");
+    header("Location: Appointments.php");
     exit();
 }
 
@@ -78,7 +78,7 @@ $appointments = getAllAppointments($pdo);
     <div class="profile-box">
         <div class="profile-section">
             <h2>Create Appointment
-                <a href="Appointments_new.php"><button class="new-link">Create New Appointment</button></a>
+                <a href="Appointments.php"><button class="new-link">Create New Appointment</button></a>
 
             </h2>
 
@@ -176,9 +176,9 @@ $appointments = getAllAppointments($pdo);
                         <td>
                             <?php echo htmlspecialchars($appointment['notes']); ?>
                         </td>
-                        <td><a href="Appointments_new.php?select_id=<?php echo $appointment['appointment_id']; ?>"><button
+                        <td><a href="Appointments.php?select_id=<?php echo $appointment['appointment_id']; ?>"><button
                                     class="edit-btn">Edit</button></a></td>
-                        <td><a href="Appointments_new.php?delete_id=<?php echo $appointment['appointment_id']; ?>"
+                        <td><a href="Appointments.php?delete_id=<?php echo $appointment['appointment_id']; ?>"
                                 onclick="return confirm('Are you sure you want to delete this appointment?');"><button
                                     class="remove-btn">Remove</button></a></td>
                     </tr>
