@@ -1,0 +1,483 @@
+:root {
+    --primary-color: #4a66f7;
+    --secondary-color: #ffffff;
+    --accent-color: aqua;
+    --text-primary: #333;
+    --text-secondary: white;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  body {
+    font-family: 'Public Sans', sans-serif;
+    background-color: #f4f5f7;
+    margin: 0;
+    padding: 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .header {
+    background-color: var(--primary-color);
+    color: var(--text-secondary);
+    padding: 20px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1000;
+  }
+  
+  .header h1, .header .profile h1 {
+    margin: 0;
+    font-weight: 900;
+    font-size: 1.5rem;
+  }
+  
+  .header .profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .header .profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav a {
+    color: var(--text-secondary);
+    padding: 10px 15px;
+    border-radius: var(--border-radius);
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.2s;
+  }
+  
+  .nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  .wrapper {
+    display: flex;
+  }
+  
+  .nav1 {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    width: 250px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+  }
+  
+  .nav1 .navBar .logo img {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .nav1 .navBar .logo span {
+    margin-left: 10px;
+  }
+  
+  .nav1 a, .nav1 form input[type="submit"] {
+    display: block;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: var(--border-radius);
+    background-color: var(--accent-color);
+    transition: background-color 0.2s;
+  }
+  
+  .nav1 a:hover, .nav1 form input[type="submit"]:hover {
+    background-color: #e1e4e8;
+  }
+  
+  .mainBody {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  
+  .mainBody .header1 {
+    background-color: var(--primary-color);
+    height: 200px;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius);
+  }
+  
+  .mainBody .followingWrapper {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .mainBody .followingWrapper .card {
+    flex-grow: 1;
+    background-color: var(--secondary-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+  }
+  
+  .mainBody .followingWrapper .card img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .mainBody .followingWrapper .card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  
+  .searchBox {
+    padding: 5px;
+    margin-top: 5px;
+    background-color: var(--accent-color);
+
+  }
+  
+  .searchBar {
+    /*background-color: var(--accent-color);*/
+    background-color: #b9bcc6;
+    
+  }
+  
+  .searchButton {
+    margin-top: 5px;
+    margin-bottom: 30px;
+  }
+  
+  .mainBox, .settingsTab {
+    background-color: var(--secondary-color);
+    width: 1000px;
+    height: 400px;
+    margin-top: 10px;
+    border-radius: var(--border-radius);
+    display: none;  
+  }
+  
+  .set-lab {
+    margin-top: 5px;
+  }
+  
+  .settingsForm {
+    padding-left: 20px;
+  }
+  
+  table, tr, td {
+    border: 2px solid var(--text-primary);
+    background-color: var(--accent-color);
+    margin: 3px;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 5px;
+  }
+  
+  th {
+    background-color: darkcyan;
+  }
+  
+  .closeButton {
+    margin-left: 800px;
+    background-color: orangered;
+  }
+  
+  .set-but {
+    margin-top: 5px;
+  }
+  
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .header h1 {
+      padding-top: 10px;
+    }
+  
+    .nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav a {
+      padding: 10px 0;
+    }
+  
+    .mainBody {
+      padding: 10px;
+    }
+  
+    .mainBody .followingWrapper {
+      flex-direction: column;
+    }
+  }
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="submit"],
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+input[type="submit"],
+button {
+    background-color: var(--primary-color);
+    color: var(--text-secondary);
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: darken(var(--primary-color), 10%);
+}
+
+/* Announcement Div styles*/
+.announcementsDiv{
+    padding-left: 20px;
+}
+
+/* Settings Form Styles */
+.settingsTab {
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+    height: 800px;
+}
+
+.settingsForm {
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: var(--text-secondary);
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+.user-info {
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: var(--border-radius);
+    margin: 8px 0;
+  }
+  
+/* Month of November Chart */
+table.month-chart {
+    background-color: transparent; 
+}
+
+table.month-chart td,
+table.month-chart th {
+    border: 1px solid black; 
+}
+
+/* Chart Styles */
+.chart-container {
+    position: relative;
+    margin: auto;
+    max-width: 1000px;
+    height: auto;
+}
+
+.chart {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* Enhance the close button styling */
+.closeButton {
+    padding: 10px 20px;
+    background-color: #ff4136;
+    color: var(--text-secondary);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    float: right;
+}
+
+.closeButton:hover {
+    background-color: darken(#ff4136, 10%);
+}
+
+/* Responsive Design for Settings */
+@media (max-width: 768px) {
+    .settingsForm {
+        width: 90%;
+    }
+
+    .settingsTab,
+    .mainBox {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Utility classes for margins and padding */
+.mt-20 { margin-top: 20px; }
+.mb-20 { margin-bottom: 20px; }
+.pt-20 { padding-top: 20px; }
+.pb-20 { padding-bottom: 20px; }
+
+/* Settings Tab Styles */
+.settingsTab {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none; 
+    width: calc(100% - 40px);
+    max-width: 800px;
+    margin: 20px auto;
+    position: relative;
+  }
+  
+  .settingsForm {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  
+  .settingsForm .form-group {
+    margin-bottom: 15px;
+  }
+
+  .settingsForm .submit-button {
+    margin-top: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-group input[type="password"],
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+  }
+  
+  .submit-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    width: auto;
+    align-self: center;
+  }
+  
+  .submit-button:hover {
+    background-color: darken(var(--primary-color), 10%);
+  }
+  
+  .closeButton {
+    padding: 8px 16px;
+    background-color: #ff4136;
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    float: right;
+  }
+  
+  .closeButton:hover {
+    background-color: darken(#ff4136, 10%);
+  }
+  
+/* Button Styles */
+.set-but {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.set-but:hover {
+    background-color: darken(var(--primary-color), 10%);
+}
+
+/* Close Button Styles */
+.closeButton {
+    background-color: #ff4136;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.closeButton:hover {
+    background-color: darken(#ff4136, 10%);
+}
+
+/* Responsive Design for Settings Panel */
+@media (max-width: 768px) {
+    .settingsTab {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

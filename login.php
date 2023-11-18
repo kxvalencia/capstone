@@ -11,11 +11,11 @@
         <h1>Welcome to Valencia Medical</h1>
     </div>
 
-    <?php if(isset($_SESSION['flash_message'])): ?>
+    <?php if (isset($_SESSION['flash_message'])): ?>
         <div class="message">
-            <?php 
-                echo $_SESSION['flash_message']; 
-                unset($_SESSION['flash_message']);
+            <?php
+            echo $_SESSION['flash_message'];
+            unset($_SESSION['flash_message']);
             ?>
         </div>
     <?php endif; ?>
@@ -28,9 +28,11 @@
             </div>
 
             <form id="signupID" class="inputGroup" action="auth.php" method="post">
-            <input type="text" placeholder="Name" class="inputField" name="signup_name">
+                <input type="text" placeholder="Name" class="inputField" name="signup_name" required>
                 <input type="email" placeholder="Email" class="inputField" name="signup_email" required>
                 <input type="password" placeholder="Password" class="inputField" name="signup_password" required>
+                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" class="inputField"
+                    name="signup_phone" required>
                 <button type="submit" class="submitButton" name="signup">Sign-up</button>
             </form>
 
@@ -45,17 +47,18 @@
     <script>
         function showTab(id) {
             var forms = document.getElementsByClassName('inputGroup');
-            for(var i = 0; i < forms.length; i++) {
+            for (var i = 0; i < forms.length; i++) {
                 forms[i].classList.add('hidden');
             }
             document.getElementById(id).classList.remove('hidden');
 
             var buttons = document.getElementsByClassName('tabButton');
-            for(var i = 0; i < buttons.length; i++) {
+            for (var i = 0; i < buttons.length; i++) {
                 buttons[i].classList.remove('active');
             }
             event.currentTarget.classList.add('active');
         }
     </script>
 </body>
+
 </html>
