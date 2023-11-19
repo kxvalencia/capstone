@@ -120,7 +120,9 @@ CREATE TABLE `patients` (
     `weight_pounds` DECIMAL(5,2),
     `blood_type` ENUM('A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'),
     `medical_history` TEXT,
-    `insurance` VARCHAR(255)
+    `insurance` VARCHAR(255),
+    `allergies` TEXT,
+    `emergency_contact_phone` VARCHAR(20)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 ```
 
