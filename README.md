@@ -2,7 +2,7 @@
 
 <img align="right" alt="Logo" width="300px" src="https://github.com/kxvalencia/capstone/assets/143300278/1e06d17a-4e9e-419c-a257-c5b4811786d4" />
 
-Live domain: https://capstone-main.000webhostapp.com/
+Live domain: https://capstone-main.000webhostapp.com/login.php
 
 Local domain: http://localhost/capstone
 
