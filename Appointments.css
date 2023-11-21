@@ -61,9 +61,10 @@ a {
     justify-content: space-between;
 }
 
-h2, h3 {
+h2,
+h3 {
     margin-top: 0;
-    
+
 }
 
 .tabs {
@@ -120,7 +121,7 @@ h2, h3 {
     border-radius: 10px;
     width: 320px;
     height: 500px;
-    
+
 }
 
 .form1 {
@@ -131,7 +132,7 @@ h2, h3 {
 
 .form2 {
     margin: 10px;
-    
+
 }
 
 .form-popup {
@@ -168,9 +169,20 @@ table {
     border-collapse: collapse;
     background: lightslategray;
     color: black;
+    table-layout: fixed;
+    width: 100%;
+    text-align: center;
 }
-th, td { 
+
+th,
+td {
     font-weight: bold;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
 }
 
 .submit-btn {
@@ -194,8 +206,8 @@ th, td {
     margin-left: 900px;*/
     color: white;
     float: right;
-    
-   
+
+
 }
 
 .edit-btn {
