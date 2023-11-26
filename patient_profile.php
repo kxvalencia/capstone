@@ -166,7 +166,7 @@ if (isset($_GET['patient_id'])) {
                 </div>
 
                 <div class="profile-section tab-content" id="prescriptions">
-                    <h3>Allergies</h3>
+                    <h3>Prescriptions</h3>
                     <button class="btn-add-prescriptions" onclick="addNewPrescription()">Add a New Prescription</button>
                     <div class="new-Prescription">
                         <!-- List of prescriptions will be displayed here -->
@@ -174,7 +174,7 @@ if (isset($_GET['patient_id'])) {
                 </div>
 
                 <div class="profile-section tab-content" id="appointments">
-                    <h3>Allergies</h3>
+                    <h3>Appointments</h3>
                     <button class="btn-add-appointments" onclick="addNewAppointment()">New Appointment</button>
                     <div class="new-Appointment">
                         <!-- List of appointments will be displayed here -->
