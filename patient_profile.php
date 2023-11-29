@@ -161,7 +161,7 @@ if (isset($_GET['patient_id'])) {
                     <h3>Allergies</h3>
                     <button class="btn-update-allergies" onclick="updateNewAllergy()">Update Allergies</button>
                     <div class="updateAllergies">
-                        <!-- List of allergies will be displayed here -->
+                    <p><?php echo htmlspecialchars($patient['allergies']); ?></p>
                     </div>
                 </div>
 
@@ -177,7 +177,7 @@ if (isset($_GET['patient_id'])) {
                     <h3>Appointments</h3>
                     <button class="btn-add-appointments" onclick="addNewAppointment()">New Appointment</button>
                     <div class="new-Appointment">
-                        <!-- List of appointments will be displayed here -->
+                    <p><?php echo htmlspecialchars($patient['allergies']); ?></p>
                     </div>
                 </div>
 
