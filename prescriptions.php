@@ -129,8 +129,8 @@ if (isset($_GET['delete_id'])) {
 
         <!-- Dashboard Overview -->
         <div class="dashboard">
-            <div>Total Prescriptions: <span id="totalPrescriptions">0</span></div>
-            <div>Active Prescriptions: <span id="activePrescriptions">0</span></div>
+            <div>Total Prescriptions: <span id="totalPrescriptions">4</span></div>
+            <div>Active Prescriptions: <span id="activePrescriptions">4</span></div>
             <div>Expiring Soon: <span id="expiringPrescriptions">0</span></div>
         </div>
 
