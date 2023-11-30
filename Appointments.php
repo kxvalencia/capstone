@@ -88,7 +88,7 @@ $appointments = getAllAppointments($pdo);
                     value="<?php echo $selectedAppointment['appointment_id'] ?? ''; ?>">
 
                 <!-- Patient ID Dropdown -->
-                <p><label for="patient_id">Patient ID: </label>
+                <p><label for="patient_id">Patient Name: </label>
                     <select name="patient_id">
                         <?php foreach ($patients as $patient): ?>
                             <option value="<?php echo $patient['patient_id']; ?>" <?php echo $selectedAppointment && $selectedAppointment['patient_id'] == $patient['patient_id'] ? 'selected' : ''; ?>>
