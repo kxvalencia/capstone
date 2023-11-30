@@ -16,7 +16,7 @@
   <div class="nav">
     <a href="patient.php">Patients</a>
     <a href="prescriptions.php">Prescriptions</a>
-    <a href="appointments.php">Appointments</a>
+    <a href="Appointments.php">Appointments</a>
     <a href="reports.php">Reports & Analytics</a>
   </div>
 </div>
