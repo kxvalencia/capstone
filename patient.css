@@ -124,3 +124,27 @@ a {
 .patient-list a:hover {
     background-color: #f4f5f7;
 }
+
+.patient-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0; 
+}
+
+.patient-name {
+    flex-grow: 1;
+}
+
+.delete-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px; 
+}
+
+.delete-btn:hover {
+    background-color: darkred;
+}

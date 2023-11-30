@@ -10,7 +10,6 @@ try {
     $stmt->execute();
 
     $patients = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
@@ -50,43 +49,53 @@ try {
         </div>
 
         <ul class="patient-list">
-            <?php foreach ($patients as $patient): ?>
-                <li><a class="patient-name" href="patient_profile.php?patient_id=<?php echo $patient['patient_id']; ?>"
-                        target="_blank">
-                        <?php echo htmlspecialchars($patient['name']); ?>
-                    </a></li>
-            <?php endforeach; ?>
-        </ul>
+    <?php foreach ($patients as $patient): ?>
+        <li>
+            <div class="patient-item">
+                <a class="patient-name" href="patient_profile.php?patient_id=<?php echo $patient['patient_id']; ?>" target="_blank">
+                    <?php echo htmlspecialchars($patient['name']); ?>
+                </a>
+                <button class="delete-btn" onclick="deletePatient(<?php echo $patient['patient_id']; ?>)">Delete</button>
+            </div>
+        </li>
+    <?php endforeach; ?>
+</ul>
     </div>
 
     <script>
         function searchUsers() {
-    const query = document.getElementById('searchBox').value;
-    fetch('search.php', {
-        method: 'POST',
-        body: new URLSearchParams(`query=%${query}%`),
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
+            const query = document.getElementById('searchBox').value;
+            fetch('search.php', {
+                    method: 'POST',
+                    body: new URLSearchParams(`query=%${query}%`),
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    }
+                })
+                .then(response => response.json())
+                .then(users => {
+                    const patientList = document.querySelector('.patient-list');
+                    patientList.innerHTML = '';
+                    users.forEach(user => {
+                        const listItem = document.createElement('li');
+                        const link = document.createElement('a');
+                        link.classList.add('patient-name');
+                        link.href = `patient_profile.php?patient_id=${user.patient_id}`; // <-- set href with patient_id
+                        link.textContent = user.name;
+                        listItem.appendChild(link);
+                        patientList.appendChild(listItem);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching search results:', error);
+                });
         }
-    })
-    .then(response => response.json())
-    .then(users => {
-        const patientList = document.querySelector('.patient-list');
-        patientList.innerHTML = '';
-        users.forEach(user => {
-            const listItem = document.createElement('li');
-            const link = document.createElement('a');
-            link.classList.add('patient-name');
-            link.href = `patient_profile.php?patient_id=${user.patient_id}`; // <-- set href with patient_id
-            link.textContent = user.name;
-            listItem.appendChild(link);
-            patientList.appendChild(listItem);
-        });
-    })
-    .catch(error => {
-        console.error('Error fetching search results:', error);
-    });
-}
+
+        function deletePatient(patientId) {
+            if (confirm('Are you sure you want to delete this patient?')) {
+                window.location.href = 'delete_patient.php?patient_id=' + patientId;
+            }
+        }
     </script>
 </body>
 
