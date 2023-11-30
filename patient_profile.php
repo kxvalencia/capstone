@@ -35,6 +35,19 @@ if (isset($_GET['patient_id'])) {
     echo "No patient ID provided.";
     exit;
 }
+
+// Fetch prescriptions
+$prescriptionStmt = $pdo->prepare("SELECT * FROM prescriptions WHERE patient_id = :patientId");
+$prescriptionStmt->bindParam(':patientId', $patientId);
+$prescriptionStmt->execute();
+$prescriptions = $prescriptionStmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Fetch appointments
+$appointmentStmt = $pdo->prepare("SELECT * FROM appointments WHERE patient_id = :patientId");
+$appointmentStmt->bindParam(':patientId', $patientId);
+$appointmentStmt->execute();
+$appointments = $appointmentStmt->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
@@ -82,20 +95,17 @@ if (isset($_GET['patient_id'])) {
 
                 <p>
                     <label for="height_feet">Height (Feet):</label>
-                    <input type="number" name="height_feet"
-                        value="<?php echo htmlspecialchars($patient['height_feet']); ?>" min="0">
+                    <input type="number" name="height_feet" value="<?php echo htmlspecialchars($patient['height_feet']); ?>" min="0">
                 </p>
 
                 <p>
                     <label for="height_inches">Height (Inches):</label>
-                    <input type="number" name="height_inches"
-                        value="<?php echo htmlspecialchars($patient['height_inches']); ?>" min="0" max="11">
+                    <input type="number" name="height_inches" value="<?php echo htmlspecialchars($patient['height_inches']); ?>" min="0" max="11">
                 </p>
 
                 <p>
                     <label for="weight_pounds">Weight (Pounds):</label>
-                    <input type="number" name="weight_pounds"
-                        value="<?php echo htmlspecialchars($patient['weight_pounds']); ?>" step="0.1" min="0">
+                    <input type="number" name="weight_pounds" value="<?php echo htmlspecialchars($patient['weight_pounds']); ?>" step="0.1" min="0">
                 </p>
 
                 <p>
@@ -114,8 +124,7 @@ if (isset($_GET['patient_id'])) {
 
                 <p>
                     <label for="medical_history">Medical History:</label>
-                    <textarea
-                        name="medical_history"><?php echo htmlspecialchars($patient['medical_history']); ?></textarea>
+                    <textarea name="medical_history"><?php echo htmlspecialchars($patient['medical_history']); ?></textarea>
                 </p>
 
                 <p>
@@ -130,14 +139,12 @@ if (isset($_GET['patient_id'])) {
 
                 <p>
                     <label for="emergency_contact_phone">Emergency Contact Phone:</label>
-                    <input type="text" name="emergency_contact_phone"
-                        value="<?php echo htmlspecialchars($patient['emergency_contact_phone']); ?>">
+                    <input type="text" name="emergency_contact_phone" value="<?php echo htmlspecialchars($patient['emergency_contact_phone']); ?>">
                 </p>
 
 
                 <div class="tabs">
                     <a class="tab-link active" onclick="showTab('patient-details')">Edit Patient Details</a>
-                    <a class="tab-link" onclick="showTab('medications')">Medications</a>
                     <a class="tab-link" onclick="showTab('allergies')">Allergies</a>
                     <a class="tab-link" onclick="showTab('prescriptions')">Prescriptions</a>
                     <a class="tab-link" onclick="showTab('appointments')">Appointments</a>
@@ -149,41 +156,44 @@ if (isset($_GET['patient_id'])) {
 
                 </div>
 
-                <div class="profile-section tab-content" id="medications">
-                    <h3>Medications</h3>
-                    <button class="btn-add-med" onclick="addNewMed()">Add New Medication</button>
-                    <div class="new-Medication">
-
-                    </div>
-                </div>
 
                 <div class="profile-section tab-content" id="allergies">
                     <h3>Allergies</h3>
-                    <button class="btn-update-allergies" onclick="updateNewAllergy()">Update Allergies</button>
                     <div class="updateAllergies">
-                    <p><?php echo htmlspecialchars($patient['allergies']); ?></p>
+                        <p><?php echo htmlspecialchars($patient['allergies']); ?></p>
                     </div>
                 </div>
 
                 <div class="profile-section tab-content" id="prescriptions">
                     <h3>Prescriptions</h3>
-                    <button class="btn-add-prescriptions" onclick="addNewPrescription()">Add a New Prescription</button>
                     <div class="new-Prescription">
                         <!-- List of prescriptions will be displayed here -->
+                        <?php foreach ($prescriptions as $prescription) : ?>
+                            <p><?php echo htmlspecialchars($prescription['drug_name']); ?> - <?php echo htmlspecialchars($prescription['size_mg']); ?>mg, Prescribed by <?php echo htmlspecialchars($prescription['doctor_name']); ?></p><?php endforeach; ?>
                     </div>
                 </div>
 
                 <div class="profile-section tab-content" id="appointments">
                     <h3>Appointments</h3>
-                    <button class="btn-add-appointments" onclick="addNewAppointment()">New Appointment</button>
                     <div class="new-Appointment">
-                    <p><?php echo htmlspecialchars($patient['allergies']); ?></p>
+                        <?php foreach ($appointments as $appointment) : ?>
+                            <?php
+                            $date = new DateTime($appointment['appointment_date']);
+                            $formattedDate = $date->format('Y-m-d'); // Format as Year-Month-Day
+                            $formattedTime = $date->format('H:i'); // Format as Hour:Minute
+                            ?>
+                            <p>
+                                Appointment Date: <?php echo htmlspecialchars($formattedDate); ?><br>
+                                Time: <?php echo htmlspecialchars($appointment['appointment_time'] ?? $formattedTime); ?><br>
+                                Physician: <?php echo htmlspecialchars($appointment['physician']); ?><br>
+                                Reason: <?php echo htmlspecialchars($appointment['reason_for_visit']); ?><br>
+                                Notes: <?php echo nl2br(htmlspecialchars($appointment['notes'])); ?>
+                            </p>
+                        <?php endforeach; ?>
                     </div>
                 </div>
 
-                <div class="profile-section">
-                    <h2>Emergency Contacts</h2>
-                </div>
+
 
         </div>
 

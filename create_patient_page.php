@@ -12,20 +12,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $blood_type = $_POST['bloodType'];
     $insurance = $_POST['insurance'];
     $medical_history = $_POST['medicalHistory'];
+    $allergies = $_POST['allergies'];
+    $emergency_contact = $_POST['emergency_contact'];
 
-    $stmt = $pdo->prepare("INSERT INTO patients (name, sex, height_feet, height_inches, weight_pounds, blood_type, medical_history, insurance) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    // Modify the SQL statement to include the new fields
+    $stmt = $pdo->prepare("INSERT INTO patients (name, sex, height_feet, height_inches, weight_pounds, blood_type, medical_history, insurance, allergies, emergency_contact_phone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-
-    if ($stmt->execute([$name, $sex, $height_feet, $height_inches, $weight_pounds, $blood_type, $medical_history, $insurance])) {
+    if ($stmt->execute([$name, $sex, $height_feet, $height_inches, $weight_pounds, $blood_type, $medical_history, $insurance, $allergies, $emergency_contact])) {
         $message = 'Patient successfully added!';
     } else {
         $message = 'There was an error adding the patient. Please try again.';
     }
 }
-
-
-$stmt = $pdo->prepare("INSERT INTO patients (name, sex, height_feet, height_inches, weight_pounds, blood_type, medical_history) VALUES (?, ?, ?, ?, ?, ?, ?)");
-
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +48,7 @@ $stmt = $pdo->prepare("INSERT INTO patients (name, sex, height_feet, height_inch
     </div>
 
     <div class="container">
-        <?php if (!empty($message)): ?>
+        <?php if (!empty($message)) : ?>
             <div class="alert">
                 <?= $message ?>
             </div>
@@ -97,6 +95,14 @@ $stmt = $pdo->prepare("INSERT INTO patients (name, sex, height_feet, height_inch
             <div class="input-group">
                 <label for="insurance">Insurance Provider:</label>
                 <input type="text" id="insurance" name="insurance" required>
+            </div>
+            <div class="input-group">
+                <label for="allergies">Allergies:</label>
+                <textarea id="allergies" name="allergies" rows="4" required></textarea>
+            </div>
+            <div class="input-group">
+                <label for="emergency_contact">Emergency Contact Phone:</label>
+                <input type="text" id="emergency_contact" name="emergency_contact" required>
             </div>
             <div class="input-group">
                 <label for="medicalHistory">Previous Medical History:</label>
