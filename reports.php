@@ -67,7 +67,7 @@
       <p>Net Profit: $380,000</p>
     </div>
     <div class="financial-chart">
-      <img src="D:/IT Capstone Project/Web Pages/Analytic.jpg" alt="Financial Analytics Chart" />
+      <img src="./img/Analytic.jpg" alt="Financial Analytics Chart" />
     </div>
   </div>
 </div>
