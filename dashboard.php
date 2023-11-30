@@ -212,7 +212,7 @@ try {
                 </div>
                 <div class="card">
                     <img src="./img/HospitalPic.png" alt="" />
-                    <h3>4 Perscription Notifications</h3>
+                    <h3>4 Prescriptions</h3>
                 </div>
                 <div class="card">
                     <img src="./img/HospitalPic.png" alt="" />
