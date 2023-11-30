@@ -33,7 +33,7 @@ try {
         <h1>Valencia Medical</h1>
         <div class="nav">
             <a href="patient.php">Patients</a>
-            <a href="prescriptions_page.php">Prescriptions</a>
+            <a href="prescriptions.php">Prescriptions</a>
             <a href="Appointments.php">Appointments</a>
             <a href="reports_analytics_page.php">Reports & Analytics</a>
         </div>
