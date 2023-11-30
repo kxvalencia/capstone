@@ -100,17 +100,17 @@ $appointments = getAllAppointments($pdo);
 
                 <p><label for="appointment_date">Date: </label>
                     <input type="date" name="appointment_date"
-                        value="<?php echo $selectedAppointment['appointment_date'] ?? ''; ?>">
+                        value="<?php echo $selectedAppointment['appointment_date'] ?? ''; ?>" required>
                 </p>
 
 
                 <p><label for="appointment_time">Time: </label>
                     <input type="time" name="appointment_time"
-                        value="<?php echo $selectedAppointment['appointment_time'] ?? ''; ?>">
+                        value="<?php echo $selectedAppointment['appointment_time'] ?? ''; ?>" required>
                 </p>
 
                 <p><label for="physician">Physician: </label>
-                    <input type="text" name="physician" value="<?php echo $selectedAppointment['physician'] ?? ''; ?>">
+                    <input type="text" name="physician" value="<?php echo $selectedAppointment['physician'] ?? ''; ?>" required>
                 </p>
 
                 <p><label for="reason_for_visit">Reason for Visit: </label>
